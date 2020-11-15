@@ -1,12 +1,20 @@
 from joblib import load
 from sklearn.feature_extraction.text import TfidfVectorizer
 
-clf = load('passiveAggresive.joblib')
-ex = ['this shit buggin b facebook.com']
 
-tfidf_vectorizer=TfidfVectorizer(stop_words='english')
-tfidf_train=tfidf_vectorizer.fit_transform(ex)
+vec = tfidf.transform(ex)
+result = clf.predict(vec)
+print(result)
 
-print(tfidf_train)
+if __name__ == '__main__':
+    tfidf = load('tfidf.joblib')
+    clf = load('passiveAggresive.joblib')
 
-# clf.predict(ex)
+    with open('input.txt',encoding='utf8) as fl:
+        txt = list(fl)
+
+    vec = tfidf.transform(fl)
+    result = clf.predict(vec)[0]
+
+    f = open('output', 'w')
+    f.write(result)
