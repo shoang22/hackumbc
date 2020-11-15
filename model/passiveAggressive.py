@@ -16,5 +16,5 @@ if __name__ == '__main__':
     vec = tfidf.transform(fl)
     result = clf.predict(vec)[0]
 
-    f = open('output', 'w')
+    f = open('output.txt', 'w')
     f.write(result)
