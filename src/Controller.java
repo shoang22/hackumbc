@@ -18,6 +18,7 @@ public class Controller {
     TextArea bodyArea;
     @FXML
     TextArea outputArea;
+
     public void submit(){
         try {
             //Files.list(Paths.get(".\\model")).forEach(System.out::println);
@@ -27,18 +28,29 @@ public class Controller {
             out.append(bodyArea.getText());
             out.close();
 
-            String command = "python passiveAggressive.py .\\model\\passiveAggressive.py";
-            Runtime.getRuntime().exec(command);
-
+            /*
+            String command = "cd model";
+            Process p = Runtime.getRuntime().exec(command);
+            command = "python passiveAggressive.py";
+            p = Runtime.getRuntime().exec(command);
+            */
             //Thread.sleep(5000);
 
+
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+    }
+
+    public void checkButton(){
+        try {
             BufferedReader in = new BufferedReader(new FileReader("output.txt"));
             String output = in.readLine();
             //System.out.println(output);
-            if(output.equals("1.0")){
-                outputArea.appendText("This news is most likely fake!");
-            }else{
-                outputArea.appendText("This news appears to be reliable!");
+            if (output.equals("1.0")) {
+                outputArea.setText("This news is most likely fake!");
+            } else {
+                outputArea.setText("This news appears to be reliable!");
             }
         }catch(Exception e){
             e.printStackTrace();

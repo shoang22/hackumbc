@@ -6,7 +6,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="734.0" prefWidth="815.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller" >
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="734.0" prefWidth="815.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
    <children>
       <TextField fx:id="urlArea" layoutX="31.0" layoutY="56.0" prefHeight="25.0" prefWidth="295.0" />
       <TextArea fx:id="bodyArea" layoutX="365.0" layoutY="37.0" prefHeight="662.0" prefWidth="436.0" />
@@ -16,5 +16,6 @@
       <Label layoutX="394.0" layoutY="14.0" prefHeight="17.0" prefWidth="108.0" text="Body Text" />
       <TextArea fx:id="outputArea" editable="false" layoutX="14.0" layoutY="499.0" prefHeight="200.0" prefWidth="337.0" />
       <Button fx:id="submitButton" layoutX="108.0" layoutY="196.0" mnemonicParsing="false" onAction="#submit" prefHeight="36.0" prefWidth="108.0" text="Submit" />
+      <Button fx:id="submitButton1" layoutX="108.0" layoutY="448.0" mnemonicParsing="false" onAction="#checkButton" prefHeight="36.0" prefWidth="108.0" text="Check" />
    </children>
 </AnchorPane>
