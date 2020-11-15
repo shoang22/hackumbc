@@ -10,7 +10,7 @@ if __name__ == '__main__':
     tfidf = load('tfidf.joblib')
     clf = load('passiveAggresive.joblib')
 
-    with open('input.txt',encoding='utf8) as fl:
+    with open('input.txt',encoding='utf8) as fl'):
         txt = list(fl)
 
     vec = tfidf.transform(fl)

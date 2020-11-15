@@ -27,10 +27,10 @@ public class Controller {
             out.append(bodyArea.getText());
             out.close();
 
-            String command = "python /c start python ./model/data/passiveAggressive.py";
-            Process p = Runtime.getRuntime().exec(command);
+            String command = "python ./model/data/passiveAggressive.py";
+            Runtime.getRuntime().exec(command);
 
-            //Thread.sleep(10000);
+            Thread.sleep(10000);
 
             BufferedReader in = new BufferedReader(new FileReader("output.txt"));
             String output = in.readLine();
