@@ -20,22 +20,26 @@ public class Controller {
     TextArea outputArea;
     public void submit(){
         try {
-            //Files.list(Paths.get(".")).forEach(System.out::println);
+            //Files.list(Paths.get(".\\model")).forEach(System.out::println);
             BufferedWriter out = new BufferedWriter(new FileWriter("input.txt"));
-            out.append(urlArea.getText() + "\n");
-            out.append(titleArea.getText() + "\n");
+            out.append(urlArea.getText() );
+            out.append(titleArea.getText() );
             out.append(bodyArea.getText());
             out.close();
 
-            String command = "python ./model/data/passiveAggressive.py";
+            String command = "python passiveAggressive.py .\\model\\passiveAggressive.py";
             Runtime.getRuntime().exec(command);
 
-            Thread.sleep(10000);
+            //Thread.sleep(5000);
 
             BufferedReader in = new BufferedReader(new FileReader("output.txt"));
             String output = in.readLine();
             //System.out.println(output);
-            outputArea.appendText(output);
+            if(output.equals("1.0")){
+                outputArea.appendText("This news is most likely fake!");
+            }else{
+                outputArea.appendText("This news appears to be reliable!");
+            }
         }catch(Exception e){
             e.printStackTrace();
         }
